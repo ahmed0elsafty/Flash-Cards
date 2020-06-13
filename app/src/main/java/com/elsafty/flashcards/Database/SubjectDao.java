@@ -14,7 +14,7 @@ import androidx.room.Update;
 @Dao
 interface SubjectDao {
     @Query("SELECT * FROM subjects")
-    LiveData<List<CardEntity>> getAllSubject();
+    LiveData<List<SubjectEntity>> getAllSubject();
 
     @Query("SELECT * FROM subjects WHERE subject_id= :id")
     LiveData<SubjectEntity> getCardById(int id);

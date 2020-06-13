@@ -21,12 +21,12 @@ import androidx.room.PrimaryKey;
 class CardEntity {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "card_id")
-    private int mId;
+    int mId;
     @ColumnInfo(name = "card_parent_id")
-    private int mParentId;
-    private String mFrontScreen;
-    private String mBackScreen;
-    private Date mDate;
+    int mParentId;
+    String mFrontScreen;
+    String mBackScreen;
+    Date mDate;
 
     public CardEntity(int mId, int mParentId, String mFrontScreen, String mBackScreen, Date mDate) {
         this.mId = mId;

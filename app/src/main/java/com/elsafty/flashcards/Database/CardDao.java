@@ -2,8 +2,8 @@ package com.elsafty.flashcards.Database;
 
 import java.util.List;
 
-import androidx.room.Dao;
 import androidx.paging.DataSource;
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -13,7 +13,7 @@ import androidx.room.Update;
 @Dao
 interface CardDao {
     @Query("SELECT * FROM cards")
-    DataSource.Factory<Integer,List<CardEntity>> getAllCards();
+    DataSource.Factory<Integer,CardEntity> getAllCards();
 
     @Query("SELECT * FROM cards WHERE card_id=:id")
     DataSource.Factory<Integer,CardEntity> getCardById(int id);

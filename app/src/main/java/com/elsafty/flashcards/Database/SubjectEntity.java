@@ -12,10 +12,10 @@ import androidx.room.PrimaryKey;
 class SubjectEntity {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "subject_id")
-    private int mId;
-    private String mTitle;
-    private Date mDate;
-    private Integer mColor;
+    int mId;
+    String mTitle;
+    Date mDate;
+    Integer mColor;
 
     public SubjectEntity(@NonNull int mId, String mTitle, Date mDate, Integer mColor) {
         this.mId = mId;
