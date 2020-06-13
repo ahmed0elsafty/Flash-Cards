@@ -3,6 +3,7 @@ package com.elsafty.flashcards.Database;
 import java.util.List;
 
 import androidx.room.Dao;
+import androidx.paging.DataSource;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -12,10 +13,10 @@ import androidx.room.Update;
 @Dao
 interface CardDao {
     @Query("SELECT * FROM cards")
-    List<CardEntity> getAllCards();
+    DataSource.Factory<Integer,List<CardEntity>> getAllCards();
 
     @Query("SELECT * FROM cards WHERE card_id=:id")
-    CardEntity getCardById(int id);
+    DataSource.Factory<Integer,CardEntity> getCardById(int id);
 
     @Query("SELECT * FROM cards WHERE card_parent_id=:id")
     List<CardEntity> getCardsParentById(int id);
